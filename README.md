@@ -12,7 +12,7 @@
 * [ ] Clone this repo.
 * [ ] `docker-compose build`
 * [ ] `docker-compose up`
-* [ ] Navigate your browser to <http://<HOST>:8080/>. Reload the page a few times, see that the host identification changes.
+* [ ] Navigate your browser to <http://HOST:8080/>. Reload the page a few times, see that the host identification changes.
 
 #### Comments
 
