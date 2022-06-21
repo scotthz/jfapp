@@ -23,3 +23,13 @@
 * I developed on ARM  and tested on x86. The webserver is not currenly multi-architecture. The `appx` image in `scotthz.jfrog.io` currently supports x86 only.
 * You'll need credentials to access `scotthz.jfrog.io`. 
 * This was thrown together in about 2 days. Please don't judge harshly.
+* I didn't get around to setting up explicit network or configuration volumes. I hardcoded static IPs on the default Docker network and copied the NginX configuration files in my `Dockerfile`.
+* I could iterate this over a couple more days and fill the above gaps.
+
+#### Discussion
+
+I have more experience with Kubernetes for this sort of deployment orchestration. I went with `docker-compose` over Vagrant+Ansible because I wanted to iterate locally on development and testing and VirtualBox doesn't support Apple Silicon. Docker and `docker-compose` works fine on x86 and ARM. The demo link above is on an x86 EC2 instance in AWS.
+
+For reference I used this Docker [Compose specification](https://docs.docker.com/compose/compose-file/) and [HTTP Load Balancing](https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/) for NginX.
+
+I used [Spring Cloud Data Flow](https://dataflow.spring.io/docs/installation/local/docker/) as a real-world docker-compose file ([docker-compose.yml](https://raw.githubusercontent.com/spring-cloud/spring-cloud-dataflow/v2.9.1/src/docker-compose/docker-compose.yml)).
